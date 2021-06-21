@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zephyrinventorysystem.UpdateDatabaseFormController">
+   <children>
+      <TextArea fx:id="tArea" layoutY="39.0" prefHeight="431.0" prefWidth="678.0" />
+      <Label fx:id="label" layoutX="65.0" layoutY="-5.0" prefHeight="44.0" prefWidth="554.0" text="Copy all data from excel document (not including column titles) and paste into box. (Scroll to end to make sure no trailing text was added after pasting)" wrapText="true" />
+      <Button fx:id="okBtn" layoutX="508.0" layoutY="475.0" mnemonicParsing="false" onAction="#okay" text="Okay" />
+      <Button layoutX="599.0" layoutY="475.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zephyrinventorysystem.MainFormController">
+    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="890.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #ff0000;" width="26.0" />
+      <TableView fx:id="tableView" editable="true" layoutY="91.0" prefHeight="549.0" prefWidth="1187.0">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Ellipse fx:id="scanCircle" fill="RED" layoutX="565.0" layoutY="667.0" radiusX="63.0" radiusY="19.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Label fx:id="scanLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="517.0" layoutY="655.0" prefHeight="21.0" prefWidth="93.0" text="DONT SCAN" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <MenuBar>
+        <menus>
+          <Menu fx:id="start" mnemonicParsing="false" text="Start">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#startTruck" text="Start Truck" />
+                  <MenuItem mnemonicParsing="false" onAction="#addToInventory" text="Add Inventory" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewInventory" text="View Inventory" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Part Database">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#addPart" text="Add" />
+                  <MenuItem mnemonicParsing="false" onAction="#removePart" text="Remove" />
+                  <MenuItem mnemonicParsing="false" onAction="#newPartsDatabase" text="Update" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewPartsDatabase" text="View" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="14.0" layoutY="645.0" text="BR Number:" />
+      <Label layoutX="14.0" layoutY="659.0" text="Pack Slip:" />
+      <Label fx:id="BRLabel" layoutX="94.0" layoutY="645.0" text="Label" visible="false" />
+      <Label fx:id="packSlipLabel" layoutX="76.0" layoutY="659.0" text="Label" visible="false" />
+      <Label fx:id="cLotNumLabel" layoutX="493.0" layoutY="4.0" text="Colour Lot Number">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="rLotNumLabel" layoutX="666.0" layoutY="5.0" prefHeight="17.0" prefWidth="93.0" text="Railcar Number">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="cLotNumField" layoutX="470.0" layoutY="59.0" promptText="eg. 2094536" />
+      <TextField fx:id="rLotNumField" layoutX="638.0" layoutY="59.0" promptText="eg. UTCX455773" />
+      <Label fx:id="techLabel" layoutX="345.0" layoutY="6.0" prefHeight="17.0" prefWidth="64.0" text="Technician">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="techField" layoutX="302.0" layoutY="59.0" />
+      <Label layoutX="14.0" layoutY="63.0" text="Shift-Click on a column to sort table by multiple fields" textFill="#00000058" />
+      <Label layoutX="473.0" layoutY="19.0" prefHeight="38.0" prefWidth="149.0" text="Number on the colour barrel or put &quot;Clear&quot; for clear" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="639.0" layoutY="22.0" prefHeight="32.0" prefWidth="149.0" text="Number for current silo on whiteboard in QC room" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button fx:id="resumeScanning" layoutX="640.0" layoutY="655.0" mnemonicParsing="false" onAction="#ResumeScanning" text="Resume Scanning" />
+      <FlowPane layoutX="1189.0" layoutY="91.0" prefHeight="153.0" prefWidth="84.0">
+         <children>
+            <Button fx:id="insertButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#insert" prefWidth="80.0" text="Insert" />
+            <Button fx:id="removeButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#remove" prefWidth="80.0" text="Remove" />
+            <Button fx:id="replaceButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#Replace" prefWidth="80.0" text="Replace" />
+            <Button fx:id="clear" minWidth="-Infinity" mnemonicParsing="false" onAction="#Clear" prefWidth="80.0" text="Clear Table" />
+            <Button fx:id="viewTotals" minWidth="-Infinity" mnemonicParsing="false" onAction="#ViewTotals" prefWidth="80.0" text="View Totals" />
+            <Button fx:id="upload" minWidth="-Infinity" mnemonicParsing="false" onAction="#Upload" prefWidth="80.0" text="UPLOAD">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children>
+      </FlowPane>
+      <TextArea fx:id="tArea" layoutX="171.0" layoutY="130.0" opacity="0.0" prefHeight="1.0" prefWidth="1.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="890.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #00ffff;" width="32.0" />
+      <Label layoutX="822.0" layoutY="30.0" prefHeight="17.0" prefWidth="320.0" text="If message is RED it must be fixed before you can upload" wrapText="true" />
+      <Label layoutX="822.0" layoutY="55.0" text="If message is BLUE it is information and you can still upload" />
+    </children>
+</AnchorPane>
