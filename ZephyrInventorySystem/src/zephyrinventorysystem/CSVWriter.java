@@ -11,9 +11,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.sql.SQLException;
 import javafx.scene.control.Alert;
-import javafx.util.Pair;
 import java.util.*;
-import java.util.stream.Collectors;
+import zephyrinventorysystem.comparators.*;
 /**
  *
  * @author Spenc
@@ -179,48 +178,84 @@ public class CSVWriter {
         //Add columns
         sb.append("GKP");
         sb.append(',');
+        sb.append("Lot");
+        sb.append(',');
         sb.append("Box");
         sb.append(',');
         sb.append("Date");
-        sb.append(',');
-        sb.append("Lot");
         sb.append("\r\n");
         
         //Add rows
         String[] moldArr = new String[10];
         TableBox tBox;
         
-        for(int i = 0; i < boxList.size(); i++){
-            //moldArr = moldAdapter.getInfo(boxList.get(i).getPartNumber());
-            tBox = boxList.get(i);
+        //Create sorted list
+        ObservableList<TableBox> sortedBoxList = FXCollections.observableArrayList();
+        sortedBoxList = boxList;
+        
+        Collections.sort(sortedBoxList, new TableBoxChainedComparator(
+                new TableBoxPartComparator(),
+                new TableBoxPFComparator(),
+                new TableBoxBoxComparator())
+        );
+        
+        
+        for(int i = 0; i < sortedBoxList.size(); i++){
+
+            tBox = sortedBoxList.get(i);
            
             sb.append(tBox.getPartNumber());
+            sb.append(',');
+            sb.append("PF" + tBox.getZephyrBarcode().substring(4, 6) + "00" + tBox.getZephyrBarcode().substring(6,9));
             sb.append(',');
             sb.append(tBox.getBoxNumber());
             sb.append(',');
             sb.append(tBox.getDateProduced());
-            sb.append(',');
-            sb.append("PF" + tBox.getZephyrBarcode().substring(4, 6) + "00" + tBox.getZephyrBarcode().substring(6,9));
             sb.append("\r\n");
         }
         
         sb.append("\r\n");
         sb.append("TOTALS");
         
+        String currentPF = sortedBoxList.get(0).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(0).getZephyrBarcode().substring(6,9);
+        String currentPart = sortedBoxList.get(0).getPartNumber();
         
-        ObservableList<String> partList = FXCollections.observableArrayList();
-        for(int i = 0; i < boxList.size(); i++){
-            partList.add(boxList.get(i).getPartNumber());
+        sb.append("\r\n");
+        sb.append(currentPart);
+                   
+        int numCurrentPF = 1;
+        int numCurrentPart = 1;
+        for (int i = 0; i < sortedBoxList.size(); i++){
+            if ((sortedBoxList.get(i).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(i).getZephyrBarcode().substring(6,9)).equals(currentPF)){
+                numCurrentPF ++;
+            }
+            else{
+                sb.append("\r\n");
+                sb.append(',');
+                sb.append("PF" + currentPF);
+                sb.append(',');
+                sb.append(numCurrentPF);
+                
+                currentPF = sortedBoxList.get(i).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(i).getZephyrBarcode().substring(6,9);
+                numCurrentPF = 1;
+            }
+            if(sortedBoxList.get(i).getPartNumber().equals(currentPart)){
+                numCurrentPart++;
+            }
+            else{
+                
+                numCurrentPart = 1;
+                currentPart = sortedBoxList.get(i).getPartNumber();
+                
+                sb.append("\r\n");
+                sb.append(currentPart);
+            }
         }
-        
-        Collections.sort(partList);
-        
-        List distinctList = partList.stream().distinct().collect(Collectors.toList());
-	for (Object s: distinctList) {
-            sb.append("\r\n" + s.toString());
-            sb.append(',');
-            sb.append(Collections.frequency(partList, s.toString()));
-	}
+        sb.append("\r\n");
+        sb.append(',');
+        sb.append("PF" + currentPF);
+        sb.append(',');
+        sb.append(numCurrentPF);
         
         return sb;
     }
