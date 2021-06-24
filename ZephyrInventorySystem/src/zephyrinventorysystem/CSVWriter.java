@@ -219,18 +219,15 @@ public class CSVWriter {
         
         String currentPF = sortedBoxList.get(0).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(0).getZephyrBarcode().substring(6,9);
         String currentPart = sortedBoxList.get(0).getPartNumber();
-        
-        sb.append("\r\n");
-        sb.append(currentPart);
                    
         int numCurrentPF = 1;
-        int numCurrentPart = 1;
         for (int i = 0; i < sortedBoxList.size(); i++){
             if ((sortedBoxList.get(i).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(i).getZephyrBarcode().substring(6,9)).equals(currentPF)){
                 numCurrentPF ++;
             }
             else{
                 sb.append("\r\n");
+                sb.append(currentPart);
                 sb.append(',');
                 sb.append("PF" + currentPF);
                 sb.append(',');
@@ -239,19 +236,12 @@ public class CSVWriter {
                 currentPF = sortedBoxList.get(i).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(i).getZephyrBarcode().substring(6,9);
                 numCurrentPF = 1;
             }
-            if(sortedBoxList.get(i).getPartNumber().equals(currentPart)){
-                numCurrentPart++;
-            }
-            else{
-                
-                numCurrentPart = 1;
+            if(!(sortedBoxList.get(i).getPartNumber().equals(currentPart))){
                 currentPart = sortedBoxList.get(i).getPartNumber();
-                
-                sb.append("\r\n");
-                sb.append(currentPart);
             }
         }
         sb.append("\r\n");
+        sb.append(currentPart);
         sb.append(',');
         sb.append("PF" + currentPF);
         sb.append(',');
