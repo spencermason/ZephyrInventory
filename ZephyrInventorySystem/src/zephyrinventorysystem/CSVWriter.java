@@ -220,7 +220,7 @@ public class CSVWriter {
         String currentPF = sortedBoxList.get(0).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(0).getZephyrBarcode().substring(6,9);
         String currentPart = sortedBoxList.get(0).getPartNumber();
                    
-        int numCurrentPF = 1;
+        int numCurrentPF = 0;
         for (int i = 0; i < sortedBoxList.size(); i++){
             if ((sortedBoxList.get(i).getZephyrBarcode().substring(4, 6) + "00" + sortedBoxList.get(i).getZephyrBarcode().substring(6,9)).equals(currentPF)){
                 numCurrentPF ++;

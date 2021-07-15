@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Wed Jun 23 22:09:30 EDT 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-017a-3bc7-8af7-00001c1dfdc0 
-on database directory C:\Users\Spenc\Documents\Work\Zephyr\ZephyrInventorySystem\ZephyrInventorySystem\ZephyrInventory with class loader sun.misc.Launcher$AppClassLoader@42a57993 
-Loaded from file:/C:/Users/Spenc/Documents/Work/Zephyr/ZephyrInventorySystem/ZephyrInventorySystem/dist/run230406898/lib/derby.jar
+Thu Jul 15 10:31:58 EDT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-017a-aa94-d4c4-000002c2b8f0 
+on database directory C:\Users\Zephyr\Documents\GitHub\ZephyrInventory\ZephyrInventorySystem\ZephyrInventory with class loader sun.misc.Launcher$AppClassLoader@55f96302 
+Loaded from file:/C:/Users/Zephyr/Documents/GitHub/ZephyrInventory/ZephyrInventorySystem/dist/run1073686065/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b14
-user.dir=C:\Users\Spenc\Documents\Work\Zephyr\ZephyrInventorySystem\ZephyrInventorySystem
-os.name=Windows 10
+java.runtime.version=1.8.0_181-b13
+user.dir=C:\Users\Zephyr\Documents\GitHub\ZephyrInventory\ZephyrInventorySystem
+os.name=Windows 7
 os.arch=amd64
-os.version=10.0
+os.version=6.1
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
