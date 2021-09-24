@@ -1115,7 +1115,7 @@ public class MainFormController implements Initializable {
                         if (code.length() == 17){
                             ZephyrCodeScanned();
                         }
-                        else if (code.length() == 6){
+                        else if (code.length() <= 6){
                             GKPCodeScanned();
                         }
                         else{
