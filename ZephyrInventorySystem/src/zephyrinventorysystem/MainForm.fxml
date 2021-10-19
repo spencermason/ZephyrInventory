@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zephyrinventorysystem.MainFormController">
+<AnchorPane id="AnchorPane" prefHeight="863.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zephyrinventorysystem.MainFormController">
     <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="890.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #ff0000;" width="26.0" />
       <TableView fx:id="tableView" editable="true" layoutY="91.0" prefHeight="549.0" prefWidth="1187.0">
@@ -89,5 +90,52 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" layoutX="890.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #00ffff;" width="32.0" />
       <Label layoutX="822.0" layoutY="30.0" prefHeight="17.0" prefWidth="320.0" text="If message is RED it must be fixed before you can upload" wrapText="true" />
       <Label layoutX="822.0" layoutY="55.0" text="If message is BLUE it is information and you can still upload" />
+      <Label layoutX="530.0" layoutY="709.0" text="BAY 1" translateX="65.0" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="700.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="779.0" layoutY="709.0" text="BAY 2" translateX="65.0" AnchorPane.leftAnchor="650.0" AnchorPane.topAnchor="700.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="327.0" layoutY="709.0" text="BAY 5" translateX="65.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="700.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="157.0" layoutY="709.0" text="BAY 6" translateX="65.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="700.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="190.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
+      <ChoiceBox layoutX="165.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="80.0" layoutY="735.0" text="Select Product" />
+      <Label layoutX="80.0" layoutY="765.0" text="Colour Lot #" />
+      <TextField layoutX="165.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Button layoutX="250.0" layoutY="761.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <Button layoutX="547.0" layoutY="761.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField layoutX="462.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="377.0" layoutY="765.0" text="Colour Lot #" />
+      <Label layoutX="377.0" layoutY="735.0" text="Select Product" />
+      <ChoiceBox layoutX="462.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton layoutX="487.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
+      <Button layoutX="848.0" layoutY="761.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField layoutX="763.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="678.0" layoutY="765.0" text="Colour Lot #" />
+      <Label layoutX="678.0" layoutY="735.0" text="Select Product" />
+      <ChoiceBox layoutX="763.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton layoutX="788.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
+      <Button layoutX="1149.0" layoutY="761.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField layoutX="1064.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="979.0" layoutY="765.0" text="Colour Lot #" />
+      <Label layoutX="979.0" layoutY="735.0" text="Select Product" />
+      <ChoiceBox layoutX="1064.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton layoutX="1089.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
+      <Line layoutX="325.0" layoutY="800.0" startY="-100.0" />
+      <Line layoutX="622.0" layoutY="800.0" startY="-100.0" />
+      <Line layoutX="923.0" layoutY="800.0" startY="-100.0" />
     </children>
 </AnchorPane>
