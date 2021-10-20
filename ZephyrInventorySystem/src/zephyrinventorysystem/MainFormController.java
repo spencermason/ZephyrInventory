@@ -34,17 +34,24 @@ import javafx.scene.paint.Color;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.Menu;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 import java.text.*;
 import java.util.stream.Collectors;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 
 /**
  *
@@ -680,6 +687,34 @@ public class MainFormController implements Initializable {
         
     }
     
+    public void viewPictures(){
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setMinSize(1287, 863);
+        grid.setPrefWidth(863);
+
+        try{
+            InputStream stream = new FileInputStream("pictures/combined.jpg");
+            Image image = new Image(stream);
+            ImageView imageView = new ImageView();
+            imageView.setImage(image);
+            grid.add(imageView,0,0);
+        }
+        catch (IOException ex){System.out.print(ex);};
+        
+        Label label = new Label("test");
+        label.setFont(new Font("Arial", 24));
+        
+        grid.add(label,0,1);
+        Scene scene = new Scene(grid);        
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Colour Lot Help");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    }
     private void initializeShippingTable(){
         tableView.getColumns().clear();
         
