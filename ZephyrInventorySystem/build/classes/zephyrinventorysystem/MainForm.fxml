@@ -110,30 +110,30 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <RadioButton layoutX="190.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
-      <ChoiceBox layoutX="165.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton6" layoutX="190.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown6" text="Down" />
+      <ChoiceBox fx:id="productBox6" layoutX="165.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
       <Label layoutX="80.0" layoutY="735.0" text="Select Product" />
-      <Label layoutX="80.0" layoutY="765.0" text="Colour Lot #" />
-      <TextField layoutX="165.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Button layoutX="250.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <Button layoutX="547.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <TextField layoutX="462.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="377.0" layoutY="765.0" text="Colour Lot #" />
+      <Label layoutX="60.0" layoutY="765.0" text="Colour Lot/Batch #" />
+      <TextField fx:id="colourLotField6" layoutX="165.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Button fx:id="helpButton6" layoutX="250.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <Button fx:id="helpButton5" layoutX="547.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField fx:id="colourLotField5" layoutX="462.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="357.0" layoutY="765.0" text="Colour Lot/Batch #" />
       <Label layoutX="377.0" layoutY="735.0" text="Select Product" />
-      <ChoiceBox layoutX="462.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
-      <RadioButton layoutX="487.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
-      <Button layoutX="848.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <TextField layoutX="763.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="678.0" layoutY="765.0" text="Colour Lot #" />
+      <ChoiceBox fx:id="productBox5" layoutX="462.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton5" layoutX="487.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown5" text="Down" />
+      <Button fx:id="helpButton2" layoutX="848.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField fx:id="colourLotField2" layoutX="763.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="658.0" layoutY="765.0" text="Colour Lot/Batch #" />
       <Label layoutX="678.0" layoutY="735.0" text="Select Product" />
-      <ChoiceBox layoutX="763.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
-      <RadioButton layoutX="788.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
-      <Button layoutX="1149.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <TextField layoutX="1064.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="979.0" layoutY="765.0" text="Colour Lot #" />
+      <ChoiceBox fx:id="productBox2" layoutX="763.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton2" layoutX="788.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown2" text="Down" />
+      <Button fx:id="helpButton1" layoutX="1149.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField fx:id="colourLotField1" layoutX="1064.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="959.0" layoutY="765.0" text="Colour Lot/Batch #" />
       <Label layoutX="979.0" layoutY="735.0" text="Select Product" />
-      <ChoiceBox layoutX="1064.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
-      <RadioButton layoutX="1089.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
+      <ChoiceBox fx:id="productBox1" layoutX="1064.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton1" layoutX="1089.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown1" text="Down" />
       <Line layoutX="325.0" layoutY="800.0" startY="-100.0" />
       <Line layoutX="622.0" layoutY="800.0" startY="-100.0" />
       <Line layoutX="923.0" layoutY="800.0" startY="-100.0" />

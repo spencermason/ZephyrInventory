@@ -46,32 +46,12 @@
       <Label layoutX="14.0" layoutY="659.0" text="Pack Slip:" />
       <Label fx:id="BRLabel" layoutX="94.0" layoutY="645.0" text="Label" visible="false" />
       <Label fx:id="packSlipLabel" layoutX="76.0" layoutY="659.0" text="Label" visible="false" />
-      <Label fx:id="cLotNumLabel" layoutX="493.0" layoutY="4.0" text="Colour Lot Number">
+      <Label fx:id="techLabel" layoutX="384.0" layoutY="42.0" prefHeight="17.0" prefWidth="64.0" text="Technician">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label fx:id="rLotNumLabel" layoutX="666.0" layoutY="5.0" prefHeight="17.0" prefWidth="93.0" text="Railcar Number">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <TextField fx:id="cLotNumField" layoutX="470.0" layoutY="59.0" promptText="eg. 2094536" />
-      <TextField fx:id="rLotNumField" layoutX="638.0" layoutY="59.0" promptText="eg. UTCX455773" />
-      <Label fx:id="techLabel" layoutX="345.0" layoutY="6.0" prefHeight="17.0" prefWidth="64.0" text="Technician">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <TextField fx:id="techField" layoutX="302.0" layoutY="59.0" />
+      <TextField fx:id="techField" layoutX="341.0" layoutY="62.0" />
       <Label layoutX="14.0" layoutY="63.0" text="Shift-Click on a column to sort table by multiple fields" textFill="#00000058" />
-      <Label layoutX="473.0" layoutY="19.0" prefHeight="38.0" prefWidth="149.0" text="Number on the colour barrel or put &quot;Clear&quot; for clear" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="639.0" layoutY="22.0" prefHeight="32.0" prefWidth="149.0" text="Number for current silo on whiteboard in QC room" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Label>
       <Button fx:id="resumeScanning" layoutX="640.0" layoutY="655.0" mnemonicParsing="false" onAction="#ResumeScanning" text="Resume Scanning" />
       <FlowPane layoutX="1189.0" layoutY="91.0" prefHeight="153.0" prefWidth="84.0">
          <children>
@@ -110,32 +90,52 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <RadioButton layoutX="190.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
-      <ChoiceBox layoutX="165.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton6" layoutX="190.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown6" text="Down" />
+      <ChoiceBox fx:id="productBox6" layoutX="165.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
       <Label layoutX="80.0" layoutY="735.0" text="Select Product" />
-      <Label layoutX="80.0" layoutY="765.0" text="Colour Lot #" />
-      <TextField layoutX="165.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Button layoutX="250.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <Button layoutX="547.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <TextField layoutX="462.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="377.0" layoutY="765.0" text="Colour Lot #" />
+      <Label layoutX="60.0" layoutY="765.0" text="Colour Lot/Batch #" />
+      <TextField fx:id="colourLotField6" layoutX="165.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Button fx:id="helpButton6" layoutX="250.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <Button fx:id="helpButton5" layoutX="547.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField fx:id="colourLotField5" layoutX="462.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="357.0" layoutY="765.0" text="Colour Lot/Batch #" />
       <Label layoutX="377.0" layoutY="735.0" text="Select Product" />
-      <ChoiceBox layoutX="462.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
-      <RadioButton layoutX="487.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
-      <Button layoutX="848.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <TextField layoutX="763.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="678.0" layoutY="765.0" text="Colour Lot #" />
+      <ChoiceBox fx:id="productBox5" layoutX="462.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton5" layoutX="487.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown5" text="Down" />
+      <Button fx:id="helpButton2" layoutX="848.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField fx:id="colourLotField2" layoutX="763.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="658.0" layoutY="765.0" text="Colour Lot/Batch #" />
       <Label layoutX="678.0" layoutY="735.0" text="Select Product" />
-      <ChoiceBox layoutX="763.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
-      <RadioButton layoutX="788.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
-      <Button layoutX="1149.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
-      <TextField layoutX="1064.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
-      <Label layoutX="979.0" layoutY="765.0" text="Colour Lot #" />
+      <ChoiceBox fx:id="productBox2" layoutX="763.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton2" layoutX="788.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown2" text="Down" />
+      <Button fx:id="helpButton1" layoutX="1149.0" layoutY="761.0" mnemonicParsing="false" onAction="#viewPictures" prefHeight="25.0" prefWidth="18.0" text="?" />
+      <TextField fx:id="colourLotField1" layoutX="1064.0" layoutY="761.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="959.0" layoutY="765.0" text="Colour Lot/Batch #" />
       <Label layoutX="979.0" layoutY="735.0" text="Select Product" />
-      <ChoiceBox layoutX="1064.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
-      <RadioButton layoutX="1089.0" layoutY="709.0" mnemonicParsing="false" text="Down" />
+      <ChoiceBox fx:id="productBox1" layoutX="1064.0" layoutY="731.0" prefHeight="25.0" prefWidth="77.0" />
+      <RadioButton fx:id="downButton1" layoutX="1089.0" layoutY="709.0" mnemonicParsing="false" onAction="#machineDown1" text="Down" />
       <Line layoutX="325.0" layoutY="800.0" startY="-100.0" />
       <Line layoutX="622.0" layoutY="800.0" startY="-100.0" />
       <Line layoutX="923.0" layoutY="800.0" startY="-100.0" />
+      <Label layoutX="554.0" layoutY="56.0" text="Silo 2:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="railcarLabel1" layoutX="613.0" layoutY="56.0" text="UTCX04056">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="railcarLabel11" layoutX="613.0" layoutY="33.0" text="UTCX04056">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="554.0" layoutY="33.0" text="Silo 1: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

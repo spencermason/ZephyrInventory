@@ -45,6 +45,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.RadioButton;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
@@ -90,11 +92,19 @@ public class MainFormController implements Initializable {
     @FXML
     public Menu start;
     @FXML
-    public Label BRLabel,packSlipLabel,cLotNumLabel, rLotNumLabel, techLabel;
+    public Label BRLabel,packSlipLabel,cLotNumLabel, rLotNumLabel, techLabel, railcarLabel;
     @FXML
     public TextField cLotNumField, rLotNumField, techField;
     @FXML
     public Button resumeScanning, clear, upload, viewTotals;
+    @FXML
+    public RadioButton downButton1,downButton2,downButton5,downButton6;
+    @FXML
+    public Button helpButton1,helpButton2,helpButton5,helpButton6;
+    @FXML
+    public ChoiceBox productBox1,productBox2,productBox5,productBox6;
+    @FXML
+    public TextField colourLotField1,colourLotField2,colourLotField5,colourLotField6;
 
     private InventoryAdapter inventoryAdapter;
     private MoldAdapter moldAdapter;
@@ -102,6 +112,67 @@ public class MainFormController implements Initializable {
     
     
     private final ObservableList<TableBox> data = FXCollections.observableArrayList();
+    
+    @FXML
+    public void machineDown1(){
+        
+        if (downButton1.isSelected()){
+            helpButton1.setDisable(true);
+            productBox1.setDisable(true);
+            colourLotField1.setDisable(true);
+        }
+        else
+        {
+            helpButton1.setDisable(false);
+            productBox1.setDisable(false);
+            colourLotField1.setDisable(false);
+        }
+    }
+    @FXML
+    public void machineDown2(){
+        
+        if (downButton2.isSelected()){
+            helpButton2.setDisable(true);
+            productBox2.setDisable(true);
+            colourLotField2.setDisable(true);
+        }
+        else
+        {
+            helpButton2.setDisable(false);
+            productBox2.setDisable(false);
+            colourLotField2.setDisable(false);
+        }
+    }
+    @FXML
+    public void machineDown5(){
+        
+        if (downButton5.isSelected()){
+            helpButton5.setDisable(true);
+            productBox5.setDisable(true);
+            colourLotField5.setDisable(true);
+        }
+        else
+        {
+            helpButton5.setDisable(false);
+            productBox5.setDisable(false);
+            colourLotField5.setDisable(false);
+        }
+    }
+    @FXML
+    public void machineDown6(){
+        
+        if (downButton6.isSelected()){
+            helpButton6.setDisable(true);
+            productBox6.setDisable(true);
+            colourLotField6.setDisable(true);
+        }
+        else
+        {
+            helpButton6.setDisable(false);
+            productBox6.setDisable(false);
+            colourLotField6.setDisable(false);
+        }
+    }
     
     public void newPartsDatabase() throws IOException{
 
@@ -704,7 +775,7 @@ public class MainFormController implements Initializable {
         }
         catch (IOException ex){System.out.print(ex);};
         
-        Label label = new Label("test");
+        Label label = new Label("The colour lot/batch");
         label.setFont(new Font("Arial", 24));
         
         grid.add(label,0,1);
